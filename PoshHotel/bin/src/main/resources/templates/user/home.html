@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posh Hotel</title>
+
+    <link rel="icon" th:href="@{/images/logo.png}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="text-center page">
+        <!-- Header-->
+        <div th:replace="fragments/header :: header"></div>
+
+
+        <!-- Footer -->
+<!--        <div th:replace="fragments/footer :: footer"></div>-->
+    </div>
+    <script th:src="@{/js/core.min.js}"></script>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

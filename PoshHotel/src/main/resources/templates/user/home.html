@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posh Hotel</title>
+
+    <link rel="icon" th:href="@{/images/logo.png}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="text-center page">
+    <!-- Header -->
+    <header class="page-header" style="padding-bottom: 24px">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-default-with-top-panel rd-navbar-fullwidth" data-layout="rd-navbar-fixed"
+                 data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fullwidth"
+                 data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
+                 data-lg-device-layout="rd-navbar-fullwidth" data-md-stick-up-offset="90px"
+                 data-lg-stick-up-offset="150px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true"
+                 data-lg-stick-up="true">
+                <div class="rd-navbar-top-panel rd-navbar-collapse">
+                    <div class="rd-navbar-top-panel-inner">
+                        <div class="left-side">
+                            <div class="group"><span class="text-italic">Follow Us:</span>
+                                <ul class="list-inline">
+                                    <li><a class="icon icon-sm icon-secondary-5 fa fa-instagram"
+                                           href="https://www.instagram.com"></a></li>
+                                    <li><a class="icon icon-sm icon-secondary-5 fa fa-facebook"
+                                           href="https://www.facebook.com"></a></li>
+                                    <li><a class="icon icon-sm icon-secondary-5 fa fa-twitter"
+                                           href="https://www.twitter.com"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="center-side">
+                            <!-- RD Navbar Brand-->
+                            <div class="rd-navbar-brand fullwidth-brand"><a class="brand-name"><img
+                                    th:src="@{/images/logo.png}" alt="" width="380" height="115"/></a></div>
+                        </div>
+                        <div class="right-side">
+                            <!-- Contact Info-->
+                            <div class="contact-info">
+                                <div class="unit unit-middle unit-horizontal unit-spacing-xs">
+                                    <div class="unit__left"><span
+                                            class="icon icon-primary text-middle mdi mdi-phone"></span></div>
+                                    <div class="unit__body"><a class="text-middle" href="tel:#">+84 382-57–183</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rd-navbar-inner">
+                    <!-- RD Navbar Panel-->
+                    <div class="rd-navbar-panel">
+                        <!-- RD Navbar Toggle-->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
+                        </button>
+                        <!-- RD Navbar collapse toggle-->
+                        <button class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse">
+                            <span></span></button>
+                        <!-- RD Navbar Brand-->
+                        <div class="rd-navbar-brand mobile-brand"><a class="brand-name"><img
+                                th:src="@{/images/logo.png}" alt="" width="380" height="115"/></a></div>
+                    </div>
+                    <div class="rd-navbar-aside-right">
+                        <div class="rd-navbar-nav-wrap">
+                            <div class="rd-navbar-nav-scroll-holder">
+                                <ul class="rd-navbar-nav">
+                                    <li class="active"><a>Home</a>
+                                    </li>
+                                    <li><a th:href="@{/about}">About Us</a>
+                                    </li>
+                                    <li><a th:href="@{/contact}">Contacts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Book now -->
+    <section class="section">
+        <div class="shell-wide">
+            <div class="range range-30 range-xs-center">
+                <div class="cell-lg-8 cell-xl-9">
+                    <!-- Classic slider-->
+                    <section class="section">
+                        <!-- Swiper -->
+                        <div class="swiper-container swiper-slider swiper-style-2" data-loop="false"
+                             data-autoplay="5500" data-simulate-touch="false" data-slide-effect="slide"
+                             data-direction="vertical">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" data-slide-bg="images/slide-01.jpg">
+                                    <div class="swiper-slide-caption">
+                                        <div class="shell text-sm-left">
+                                            <h1 data-caption-animate="slideInDown" data-caption-delay="100">Your Ideal
+                                                Retreat</h1>
+                                            <div class="slider-subtitle-group">
+                                                <div class="decoration-line" data-caption-animate="slideInDown"
+                                                     data-caption-delay="400"></div>
+                                                <h4 data-caption-animate="slideInLeft" data-caption-delay="700">Enjoy
+                                                    the world of relaxation</h4>
+                                                <h3 data-caption-animate="slideInLeft" data-caption-delay="800">and
+                                                    tranquility!</h3>
+                                            </div>
+                                            <a class="button button-effect-ujarak button-lg button-white-outline button-square"
+                                               th:href="@{/about}" data-caption-animate="slideInLeft"
+                                               data-caption-delay="1150"><span>learn more</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-slide-bg="images/slide-02.jpg">
+                                    <div class="swiper-slide-caption">
+                                        <div class="shell text-sm-left">
+                                            <h1 data-caption-animate="slideInDown" data-caption-delay="100">Relax &
+                                                Unwind</h1>
+                                            <div class="slider-subtitle-group">
+                                                <div class="decoration-line" data-caption-animate="slideInDown"
+                                                     data-caption-delay="400"></div>
+                                                <h4 data-caption-animate="slideInLeft" data-caption-delay="700">
+                                                    Experience the luxurious level</h4>
+                                                <h3 data-caption-animate="slideInLeft" data-caption-delay="800">of our
+                                                    spa treatments</h3>
+                                            </div>
+                                            <a class="button button-effect-ujarak button-lg button-white-outline button-square"
+                                               th:href="@{/about}" data-caption-animate="slideInLeft"
+                                               data-caption-delay="1150"><span>learn more</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" data-slide-bg="images/slide-03.jpg">
+                                    <div class="swiper-slide-caption">
+                                        <div class="shell text-sm-left">
+                                            <h1 data-caption-animate="slideInDown" data-caption-delay="100">Revitalize &
+                                                Relax</h1>
+                                            <div class="slider-subtitle-group">
+                                                <div class="decoration-line" data-caption-animate="slideInDown"
+                                                     data-caption-delay="400"></div>
+                                                <h4 data-caption-animate="slideInLeft" data-caption-delay="700">Indulge
+                                                    in our top-notch</h4>
+                                                <h3 data-caption-animate="slideInLeft" data-caption-delay="800">spa
+                                                    resort</h3>
+                                            </div>
+                                            <a class="button button-effect-ujarak button-lg button-white-outline button-square"
+                                               th:href="@{/about}" data-caption-animate="slideInLeft"
+                                               data-caption-delay="1150"><span>learn more</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="cell-lg-4 cell-xl-3 reveal-lg-flex">
+                    <div class="hotel-booking-form">
+                        <h3>Booking Infomation</h3>
+                        <!-- RD Mailform-->
+                        <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact"
+                              method="post" action="">
+                            <div class="range range-sm-bottom spacing-20">
+                                <div class="cell-lg-12 cell-md-4">
+                                    <p class="text-uppercase">Your Name</p>
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="contact-first-name" type="text" name="name"
+                                               data-constraints="@Required">
+                                        <label class="form-label" for="contact-first-name">Your Full Name</label>
+                                    </div>
+                                </div>
+                                <div class="cell-lg-12 cell-md-4 cell-sm-6">
+                                    <p class="text-uppercase">Arrival</p>
+                                    <div class="form-wrap">
+                                        <label class="form-label form-label-icon" for="date-in"><span
+                                                class="icon icon-primary fa-calendar"></span><span>Check-in Date</span></label>
+                                        <input class="form-input" id="date-in" data-time-picker="date" type="text"
+                                               name="date" data-constraints="@Required">
+                                    </div>
+                                </div>
+                                <div class="cell-lg-12 cell-md-4 cell-sm-6">
+                                    <p class="text-uppercase">Departure</p>
+                                    <div class="form-wrap">
+                                        <label class="form-label form-label-icon" for="date-out"><span
+                                                class="icon icon-primary fa-calendar"></span><span>Check-out Date</span></label>
+                                        <input class="form-input" id="date-out" data-time-picker="date" type="text"
+                                               name="date" data-constraints="@Required">
+                                    </div>
+                                </div>
+                                <div class="cell-lg-6 cell-md-4 cell-xs-6">
+                                    <p class="text-uppercase">Adults</p>
+                                    <div class="form-wrap form-wrap-validation">
+                                        <!--Select 2-->
+                                        <input type="text" class="form-input" data-minimum-results-search="-1"
+                                                data-placeholder="1" data-constraints="@Required" th:value="1">
+                                    </div>
+                                </div>
+                                <div class="cell-lg-6 cell-md-4 cell-xs-6">
+                                    <p class="text-uppercase">Children</p>
+                                    <div class="form-wrap form-wrap-validation">
+                                        <!--Select 2-->
+                                        <input type="text" class="form-input" data-minimum-results-search="-1"
+                                                data-placeholder="0" data-constraints="@Required" th:value="0">
+                                    </div>
+                                </div>
+                                <div class="cell-lg-12 cell-md-4">
+                                    <button class="button button-primary button-square button-block button-effect-ujarak"
+                                            type="submit"><span>Book Now</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About us-->
+    <section class="section section-md bg-white text-center text-sm-left">
+        <div class="shell-wide">
+            <div class="range range-50 range-xs-center overflow-hidden">
+                <div class="cell-sm-10 cell-md-8 cell-lg-7 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="post-video post-video-border">
+                        <div class="post-video__image"><img th:src="@{/images/video-bg-1020x525.jpg}" alt="" width="1020" height="525"/>
+                        </div>
+                        <div class="post-video__body"><a class="link-control post-video__control" data-lightgallery="item" href="https://www.youtube.com/watch?v=KTgU_ShGOZw"></a></div>
+                    </div>
+                </div>
+                <div class="cell-sm-10 cell-md-8 cell-lg-5 reveal-flex wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-primary section-wrap-content-var-1">
+                        <div class="section-wrap-content-var-1-inner">
+                            <h2>About Us</h2>
+                            <p>Committed to everyone seeking energy and excitement, we offer endless possibilities to unwind and reenergize.</p>
+                            <div class="group">
+                                <dl class="list-desc">
+                                    <dt>Weekdays:</dt>
+                                    <dd><span>8:00–20:00</span></dd>
+                                </dl>
+                                <dl class="list-desc">
+                                    <dt>Weekends:</dt>
+                                    <dd><span>9:00–18:00</span></dd>
+                                </dl>
+                            </div><a class="button button-effect-ujarak button-lg button-secondary-outline button-square" th:href="@{/booking}"><span>book now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio-->
+    <section class="section section-md bg-white text-center text-sm-left">
+        <div class="shell-wide">
+            <div class="range range-10 range-middle">
+                <div class="cell-sm-6">
+                    <h3>Our Gallery</h3>
+                </div>
+                <div class="cell-sm-6 text-sm-right"><a class="heading-link link-gray-darker" href="#">See All Photos</a></div>
+            </div>
+            <hr>
+            <div class="isotope-wrap">
+                <!-- Isotope Content-->
+                <div class="row isotope" data-isotope-layout="masonry" data-isotope-group="gallery" data-lightgallery="group">
+                    <div class="col-xs-12 col-sm-6 col-md-3 grid-sizer"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 isotope-item wow fadeInUp" data-filter="Category 1" data-wow-delay=".1s"><a class="portfolio-item thumbnail-classic" th:href="@{/images/gallery-1-533x800_original.jpg}" data-size="533x800" data-lightgallery="item"><img src="images/gallery-1-420x584.jpg" alt="" width="420" height="584"/>
+                        <figure></figure>
+                        <div class="caption"><span class="icon mdi-thumb-up-outline">346</span><span class="icon mdi-eye">220</span></div></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 isotope-item wow fadeInUp" data-filter="Category 1" data-wow-delay=".2s"><a class="portfolio-item thumbnail-classic" th:href="@{/images/gallery-2-1199x800_original.jpg}" data-size="1199x800" data-lightgallery="item"><img src="images/gallery-2-420x278.jpg" alt="" width="420" height="278"/>
+                        <figure></figure>
+                        <div class="caption"><span class="icon mdi-thumb-up-outline">346</span><span class="icon mdi-eye">220</span></div></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 isotope-item wow fadeInUp" data-filter="Category 1" data-wow-delay=".4s"><a class="portfolio-item thumbnail-classic" th:href="@{/images/gallery-3-584x800_original.jpg}" data-size="584x800" data-lightgallery="item"><img src="images/gallery-3-420x584.jpg" alt="" width="420" height="584"/>
+                        <figure></figure>
+                        <div class="caption"><span class="icon mdi-thumb-up-outline">346</span><span class="icon mdi-eye">220</span></div></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 isotope-item wow fadeInUp" data-filter="Category 1" data-wow-delay=".5s"><a class="portfolio-item thumbnail-classic" th:href="@{/images/gallery-4-1200x800_original.jpg}" data-size="1200x800" data-lightgallery="item"><img src="images/gallery-4-420x278.jpg" alt="" width="420" height="278"/>
+                        <figure></figure>
+                        <div class="caption"><span class="icon mdi-thumb-up-outline">346</span><span class="icon mdi-eye">220</span></div></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 isotope-item wow fadeInUp" data-filter="Category 1" data-wow-delay=".3s"><a class="portfolio-item thumbnail-classic" th:href="@{/images/gallery-5-1200x800_original.jpg}" data-size="1200x800" data-lightgallery="item"><img src="images/gallery-5-420x278.jpg" alt="" width="420" height="278"/>
+                        <figure></figure>
+                        <div class="caption"><span class="icon mdi-thumb-up-outline">346</span><span class="icon mdi-eye">220</span></div></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 isotope-item wow fadeInUp" data-filter="Category 1" data-wow-delay=".6s"><a class="portfolio-item thumbnail-classic" th:href="@{/images/gallery-6-1200x798_original.jpg}" data-size="1200x798" data-lightgallery="item"><img src="images/gallery-6-420x278.jpg" alt="" width="420" height="278"/>
+                        <figure></figure>
+                        <div class="caption"><span class="icon mdi-thumb-up-outline">346</span><span class="icon mdi-eye">220</span></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="page-footer text-left text-sm-left" th:fragment="footer">
+        <div class="shell-wide">
+            <div class="page-footer-minimal">
+                <div class="shell-wide">
+                    <div class="range range-50">
+                        <div class="cell-sm-6 cell-md-3 cell-lg-4 wow fadeInUp" data-wow-delay=".1s">
+                            <div class="page-footer-minimal-inner">
+                                <h4>Opening Hours</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="group-xs">
+                                            <div>
+                                                <dl class="list-desc">
+                                                    <dt>Weekdays:</dt>
+                                                    <dd class="text-gray-darker"><span>8:00 – 20:00</span></dd>
+                                                </dl>
+                                            </div>
+                                            <div>
+                                                <dl class="list-desc">
+                                                    <dt>Weekends:</dt>
+                                                    <dd class="text-gray-darker"><span>9:00 – 18:00</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="rights">
+                                            <span>&copy;&nbsp;</span><span>2023</span><span>&nbsp;</span><span
+                                                class="copyright-year"></span>A mini project of <a
+                                                href="https://docs.google.com/spreadsheets/d/1N1PFBaU-HcPTn17v2q0dyn1F3AQe3V1K87J3T3JJ5Sw/edit?fbclid=IwAR28nLjS7-JskxZKRoZuEMDrEfkstv3QfZTaAe4TH5mQfpSOBuaT5z0rSiA#gid=1975243958">Group
+                                            2</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-5 cell-lg-4 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="page-footer-minimal-inner">
+                                <h4>Address</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <dl class="list-desc">
+                                            <dt><span class="icon icon-sm mdi mdi-map-marker"></span></dt>
+                                            <dd><a class="link link-gray-darker" href="#">Km10 Nguyen Trai street, Ha
+                                                Dong dc, Ha Noi</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="list-desc">
+                                            <dt><span class="icon icon-sm mdi mdi-phone"></span></dt>
+                                            <dd class="text-gray-darker">Call Us: <a class="link link-gray-darker"
+                                                                                     href="tel:#">+84 382-57-183</a>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cell-sm-8 cell-md-4 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="page-footer-minimal-inner-subscribe">
+                                <h4>Join Our Newsletter</h4>
+                                <!-- RD Mailform-->
+                                <form class="rd-mailform rd-mailform-inline form-center"
+                                      data-form-output="form-output-global" data-form-type="subscribe" method="post"
+                                      action="bat/rd-mailform.php">
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="subscribe-email" type="email" name="email"
+                                               data-constraints="@Email @Required">
+                                        <label class="form-label" for="subscribe-email">Enter your e-mail</label>
+                                    </div>
+                                    <button class="button button-primary-2 button-effect-ujarak button-square"
+                                            type="submit"><span>Subscribe</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script th:src="@{/js/core.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

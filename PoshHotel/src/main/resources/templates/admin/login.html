@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <title>Posh Hotel | Admin</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="form-signin-heading">POSH HOTEL ADMINISTRATION</h1>
+    <form class="form-signin" method="POST" th:action="@{/admin/login/auth}" role="form" th:object="${admin}">
+        <p>
+            <label for="eid" class="sr-only">Employee ID</label>
+            <input type="text" id="eid" name="cid" class="form-control"
+                   placeholder="Enter your ID" required autofocus th:field="*{eid}">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="Enter Password" th:field="*{password}" required>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+<!--        <div th:if="${param.error}" class="alert alert-danger">-->
+<!--            Invalid username and password!-->
+<!--        </div>-->
+    </form>
+</div>
+</body>
+</html>

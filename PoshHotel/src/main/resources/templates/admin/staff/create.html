@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <title>Posh Hotel | Admin</title>
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <h1><a th:href="@{/templates/admin}" class="logo">POSH HOTEL</a></h1>
+        <ul class="list-unstyled components mb-5">
+            <li>
+                <a th:href="@{/admin/info}">My Infomation</a>
+            </li>
+            <li>
+                <a th:href="@{admin/bookings}">Booking Management</a>
+            </li>
+            <li>
+                <a th:href="@{admin/customers}">Customer Management</a>
+            </li>
+            <li>
+                <a th:href="@{admin/rooms}">Room Management</a>
+            </li>
+            <li>
+                <a th:href="@{/admin/staffs}">Staff Management</a>
+            </li>
+            <li style="text-align: center">
+                Hello <span th:text="${session.user['fullname']}"></span>!
+            </li>
+            <li style="align-items: center">
+                <form method="post" th:action="@{/admin/logout}">
+                    <span class="fa fa-sign-out mr-3"></span><button class="btn btn-dark" type="submit" style="height: 50px; width: 150px; font-size: large">Logout</button>
+                </form>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Create Staff</h2>
+        <hr/>
+        <form method="post" th:action="@{/admin/staff/add/save}" th:object="${admin}">
+
+            <div class="form-group col-5">
+                <label for="fullname">Full name</label>
+                <input type="text" class="form-control" th:field="*{fullname}" id="fullname" placeholder="Full name"  required>
+            </div>
+            <div class="form-group col-5">
+                <label for="eid">Employee id</label>
+                <input type="text" class="form-control" id="eid" th:field="*{eid}" placeholder="Employee Id" required>
+            </div>
+            <div class="form-group col-5">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" th:field="*{email}" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group col-5">
+                <label for="phonenumber">Phone number</label>
+                <input type="text" class="form-control" th:field="*{phonenumber}" id="phonenumber" placeholder="Phone number" required>
+            </div>
+            <div class="form-group col-5">
+                <label for="role" th:field="*{role}">Role</label>
+                <select class="form-control" id="role" name="role">
+                    <option th:each="r : ${roles}" th:value="${r.id}" th:text="${r.roleName}"></option>
+                </select>
+            </div>
+            <div class="form-group col-5">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" th:field="*{password}" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

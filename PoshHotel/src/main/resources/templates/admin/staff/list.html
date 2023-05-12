@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+  <title>Posh Hotel | Admin</title>
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+    <h1><a th:href="@{/templates/admin}" class="logo">POSH HOTEL</a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li>
+        <a th:href="@{/admin/info}">My Infomation</a>
+      </li>
+      <li>
+        <a th:href="@{admin/bookings}">Booking Management</a>
+      </li>
+      <li>
+        <a th:href="@{admin/customers}">Customer Management</a>
+      </li>
+      <li>
+        <a th:href="@{admin/rooms}">Room Management</a>
+      </li>
+      <li>
+        <a th:href="@{/admin/staffs}">Staff Management</a>
+      </li>
+      <li style="text-align: center">
+        Hello <span th:text="${session.user['fullname']}"></span>!
+      </li>
+      <li style="align-items: center">
+        <form method="post" th:action="@{/admin/logout}">
+          <span class="fa fa-sign-out mr-3"></span><button class="btn btn-dark" type="submit" style="height: 50px; width: 150px; font-size: large">Logout</button>
+        </form>
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <h2 class="mb-4">List of all Staffs</h2>
+    <hr/>
+    <table class="table" style="width: auto; float: right" >
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Full name</th>
+        <th scope="col">EID</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phonenumber</th>
+        <th scope="col">Role</th>
+        <th scope="col" colspan="2">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block>
+        <tr th:each="s : ${adminList}">
+          <td th:text="${s.id}"></td>
+          <td th:text="${s.fullname}"></td>
+          <td th:text="${s.eid}"></td>
+          <td th:text="${s.email}"></td>
+          <td th:text="${s.phonenumber}"></td>
+          <td th:text="${s.role.roleName}"></td>
+          <td><a class="btn btn-success"><i class="icon icon-sm icon-secondary-5 fa fa-edit"></i></a></td>
+          <td><a class="btn btn-danger"><i class="icon icon-sm icon-secondary-5 fa fa-trash"></i></a></td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+    <a class="btn btn-success" th:href="@{/admin/staff/add}">Add Staff</a>
+  </div>
+</div>
+</body>
+</html>
